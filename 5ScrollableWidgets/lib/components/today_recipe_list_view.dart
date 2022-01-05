@@ -29,14 +29,16 @@ class TodayRecipeListView extends StatelessWidget {
             height: 400,
             color: Colors.transparent,
             child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: recipes.length,
               itemBuilder: (context,index){
                 final recipe = recipes[index];
                 return buildCard(recipe);
               }
             , separatorBuilder: (context,index){
-              return const SizedBox(width: 16,)
+              return const SizedBox(width: 16);
             }, 
-            itemCount: recipes.length,),
+            ),
           )
         ],
       ),
